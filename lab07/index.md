@@ -111,8 +111,6 @@ public void onAttach(Context context) {
 } 
 ~~~
 
-**Si le onAttach ne fonctionne pas, essayez de remplacer le paramètre Context context avec Activity activity (API < 23)**
-
 Créez le champ `mListener` dans la classe `coloringFragment` :
 
 ~~~ java
