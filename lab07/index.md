@@ -93,7 +93,7 @@ public interface OnColoringFragmentInteractionListener {
 
 Cette interface doit être implémentée par l’activité hôte. Pour obliger l’activité hôte à implémenter cette interface, redéfinissez la méthode de Callback onAttach comme suit dans le fragment colorant. Le casting impose sa volonté d’implémentation de l’interface à l’activité.
 
-**Pourquoi?
+**Pourquoi?**
 
 Pour que notre fragment puisse être utilisé avec n'importe quelle Activity! L'interface contient toutes les façons que le fragment peut intéragir avec l'activité hôte. Ainsi, pour qu'une activité soit compatible avec notre fragment, il faut qu'il soit prêt à gérer les actions du fragment, qu'il implémente son interface.
 
