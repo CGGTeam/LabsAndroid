@@ -232,18 +232,18 @@ Dans le layout de l’activité, ajoutez deux layout linéaires partageant l’�
 </LinearLayout> 
 ~~~
 
-~~Ajoutez 2 classes (`ColoringFragment` et `ColoredFragment`) de fragments à votre projet.~~ Ajoutez ensuite 2 objets fragments à votre activité. N'oubliez pas de faire en sorte que DynamicColoredFragmentHostActivity implémente les interfaces que ColoringFragment et ColoredFragment utilisent.
+Ajoutez 2 classes (`DynamicColoringFragment` et `DynamicColoredFragment`) de fragments à votre projet. Ajoutez ensuite 2 objets fragments à votre activité. N'oubliez pas de faire en sorte que DynamicColoredFragmentHostActivity implémente les interfaces que ColoringFragment et ColoredFragment utilisent.
 
 ~~~ java
-ColoredFragment dynamicColoredFragment; 
-ColoringFragment dynamicColoringFragment;
+DynamicColoredFragment dynamicColoredFragment; 
+DynamicColoringFragment dynamicColoringFragment;
 ~~~
 
 Placez les fragments dans les layout définis précédemment comme suit dans la méthode `onCreate`: 
 
 ~~~ java
-dynamicColoredFragment = new ColoredFragment();
-dynamicColoringFragment = new ColoringFragment();
+dynamicColoredFragment = new DynamicColoredFragment();
+dynamicColoringFragment = new DynamicColoringFragment();
  
 FragmentManager fragmentManager = getFragmentManager(); 
 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction(); 
