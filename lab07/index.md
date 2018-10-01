@@ -315,13 +315,19 @@ Créez un projet en choisissant l’option master-detail
 ![Master Detail](master_detail.jpg)
 
 Laissez les options par défaut et cliquez sur Finish pour créer l’application.  
-Le programme, tel qu’il est créé au départ, vous permet de manipuler des objets bidons appelés `Item`. Exécutez le programme sur une tablette et cliquez sur les items à gauche et les informations s’afficheront dans la partie de droite. Exécutez l’application sur un téléphone et remarquez que vous aurez une nouvelle fenêtre pour afficher les mêmes détails qui étaient affichés à droite sur la tablette.  
+Le programme, tel qu’il est créé au départ, vous permet de manipuler des objets bidons appelés `Item`. Exécutez le programme sur une tablette et cliquez sur les items à gauche et les informations s’afficheront dans la partie de droite. Exécutez l’application sur un téléphone et remarquez que vous aurez une nouvelle fenêtre pour afficher les mêmes détails qui étaient affichés à droite sur la tablette.
+
 Dans ce programme, vous avez trois classes avec pour activité hote `ItemListActivity`. Vous avez un fragment qui s’affiche soit dans la partie droite dans le cas d’une tablette et dans l’activité `ItemDetailActivity` dans le cas d’un smartphone.  
-Les items qui sont manipulés sont placés dans le sous-package dummy. Une classe `DummyContent` et une classse interne `DummyItem`. Les informations de la classe `DummyItem` sont les suivantes : id, content, details.  
+Les items qui sont manipulés sont placés dans le sous-package dummy. Une classe `DummyContent` et une classse interne `DummyItem`. Les informations de la classe `DummyItem` sont les suivantes : id, content, details.
+
 Créez un sous package encapsulant une classe Person vous permettant de manipuler des personnes à la place des `DummyItems`. Vous pouvez vous inspirer de l’approche de manipulation des `DummyItem`. Les champs de la classe Person sont les suivants : id, firstName, lastName, phoneNumber, email, address, city, country. Ajoutez les méthodes equals et toString dans la classe Person.  
+
 Dans le fragment de gauche, affichez seulement les noms et prénoms des personnes.  Dans le fragment de détail, affichez toutes les informations sur la personne sélectionnée dans le fragment de gauche dans des `EditText`.  
+
 Ajoutez des boutons Save, Delete et Update vous permettant de faire les opérations de CRUD sur les données.  
+
 Vous pouvez alimenter la source de donnée au démarrage de l’application comme dans le cas des `DummyItem`.  
+
 A la suppression d’une personne dans le fragment de droite, vous devez automatiquement mettre à jour le `RecyclerView` dans la partie gauche. Utilisez l’approche de communication des fragments pour envoyer un message au `RecyclerView` pour mettre à jour ses données.  
 
 Bonus : A la place des `ArrayList` et `HashMap`, utilisez une base de données pour stocker les données. Vous pouvez vous inspirer du labo 6 pour sur la persistance des données avec `SQLite`.  
