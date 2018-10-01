@@ -268,7 +268,7 @@ void onAttach(Context context) {
 }
 ~~~
 
-*Ceci est possible car ReplacingFragment n'intéragit avec son activité parent. Cette dernière n'a donc pas besoin d'implémenter d'interface pour être compatible avec le fragment.*
+*Ceci est possible car ReplacingFragment n'intéragit pas avec son activité parent. Cette dernière n'a donc pas besoin d'implémenter d'interface pour être compatible avec le fragment.*
 
 Ajoutez dans le fragment de haut un autre bouton par la programmation vous permettant de remplacer le fragment du bas par le `ReplacingFragment`. 
 
