@@ -2,7 +2,7 @@
 
 Laboratoire original par Ronald Jean-Julien.  
 Corrigé et converti en Markdown par Corentin Brunel.  
-Modifications apportées par Philippe Doyon.
+Modifications apportées par Philippe Doyon et Antoine Brassard Lahey.
 
 ## Objectifs d’apprentissage
 
@@ -290,7 +290,7 @@ ft.addToBackStack(null);
 Lancez à nouveau le programme.  
 Cliquez pour revenir en arrière avec la touche Retour Arrière du périphérique et observez le comportement. 
 
-## II. Fragment Master-Détail
+## III. Fragment Master-Détail
 
 Dans cette deuxième partie du labo, vous allez créer une application qui va vous permettre de faire la communication entre un `RecyclerView` et un fragment. Dans ce casci, vous allez utiliser un template master-detail. Les `RecyclerViews` sont une version un peu plus évoluée et plus performante des `ListView`.  
 Créez un projet en choisissant l’option master-detail
