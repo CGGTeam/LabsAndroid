@@ -187,7 +187,11 @@ Ajoutez une liste (`ListView`) avec des couleurs au fragment de haut. Modifiez l
 
 Ajoutez une autre activité (Option `Empty Activity`) au projet.
 
+**Comment y naviguer? Aucune idée**
+
 Dans le layout de l’activité, ajoutez deux layout linéaires partageant l’écran en deux parties égales de haut en bas en mode portrait (et de la droite vers la gauche en mode paysage), chacun ayant une couleur de fonds différente l’une de l’autre.
+
+**DynamicColoredFragmentHostActivity n'exite pas. Je n'ai aucune idée de quoi il parle**
 
 ~~~ xml
 <?xml version="1.0" encoding="utf-8"?> 
