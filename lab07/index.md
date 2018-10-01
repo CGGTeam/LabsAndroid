@@ -185,7 +185,7 @@ Ajoutez une liste (`ListView`) avec des couleurs au fragment de haut. Modifiez l
 
 ## II. Fragment dynamique
 
-Ajoutez une autre activité (Option `Empty Activity`) au projet. 
+Ajoutez une autre activité (Option `Empty Activity`) au projet.
 
 Dans le layout de l’activité, ajoutez deux layout linéaires partageant l’écran en deux parties égales de haut en bas en mode portrait (et de la droite vers la gauche en mode paysage), chacun ayant une couleur de fonds différente l’une de l’autre.
 
@@ -226,19 +226,18 @@ Dans le layout de l’activité, ajoutez deux layout linéaires partageant l’�
 </LinearLayout> 
 ~~~
 
-Ajoutez 2 classes (`ColoringFragment` et `ColoredFragment`) de fragments à votre projet  Ajoutez ensuite 2 objets fragments à votre activité. 
+~~Ajoutez 2 classes (`ColoringFragment` et `ColoredFragment`) de fragments à votre projet.~~ Ajoutez ensuite 2 objets fragments à votre activité. 
 
 ~~~ java
 ColoredFragment dynamicColoredFragment; 
-ColoringFragment dynamicColoringFragment; 
+ColoringFragment dynamicColoringFragment;
 ~~~
 
 Placez les fragments dans les layout définis précédemment comme suit dans la méthode `onCreate`: 
 
 ~~~ java
 dynamicColoredFragment = new ColoredFragment();
-dynamicColoringFragment = new ColoringFragment(); 
-replacingFragment = new ReplacingFragment(); 
+dynamicColoringFragment = new ColoringFragment();
  
 FragmentManager fragmentManager = getFragmentManager(); 
 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction(); 
@@ -257,7 +256,7 @@ Ajoutez dans le fragment de haut un autre bouton par la programmation vous perme
 Créer un bouton dans le fragment de haut vous permettant de remplacer le fragment du bas. Le code de remplacement du fragment ressemble à ceci : 
 
 ~~~ java
-ReplacingFragment replacingFragment; 
+ReplacingFragment replacingFragment = new ReplacingFragment(); 
 btnChangeFragment.setOnClickListener(new View.OnClickListener() { 
     @Override 
     public void onClick(View view) { 
