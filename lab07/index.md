@@ -91,7 +91,10 @@ public interface OnColoringFragmentInteractionListener {
 } 
 ~~~
 
-Cette interface doit être implémentée par l’activité hôte.  Pour obliger l’activité hôte à implémenter cette interface, redéfinissez la méthode de Callback `onAttach` comme suit dans le fragment colorant. Le casting impose sa volonté d’implémentation de l’interface à l’activité. 
+Cette interface doit être implémentée par l’activité hôte. Pour obliger l’activité hôte à implémenter cette interface, redéfinissez la méthode de Callback onAttach comme suit dans le fragment colorant. Le casting impose sa volonté d’implémentation de l’interface à l’activité.
+
+###Pourquoi?
+Pour que notre fragment puisse être utilisé avec n'importe quelle Activity! L'interface contient toutes les façons que le fragment peut intéragir avec l'activité hôte. Ainsi, pour qu'une activité soit compatible avec notre fragment, il faut qu'il soit prêt à gérer les actions du fragment, qu'il implémente son interface.
 
 ~~~ java
 @Override 
@@ -185,7 +188,7 @@ Ajoutez une liste (`ListView`) avec des couleurs au fragment de haut. Modifiez l
 
 ## II. Fragment dynamique
 
-Ajoutez une autre activité (Option `Empty Activity`), nommée DynamicColoredFragmentHostActivity, au projet.
+Ajoutez une autre activité (Option `Empty Activity`), nommée DynamicColoredFragmentHostActivity, au projet. 
 
 **Comment y naviguer? Aucune idée**
 
@@ -228,7 +231,7 @@ Dans le layout de l’activité, ajoutez deux layout linéaires partageant l’�
 </LinearLayout> 
 ~~~
 
-~~Ajoutez 2 classes (`ColoringFragment` et `ColoredFragment`) de fragments à votre projet.~~ Ajoutez ensuite 2 objets fragments à votre activité. 
+~~Ajoutez 2 classes (`ColoringFragment` et `ColoredFragment`) de fragments à votre projet.~~ Ajoutez ensuite 2 objets fragments à votre activité. N'oubliez pas de faire en sorte que DynamicColoredFragmentHostActivity implémente les interfaces que ColoringFragment et ColoredFragment utilisent.
 
 ~~~ java
 ColoredFragment dynamicColoredFragment; 
@@ -254,7 +257,20 @@ Lancez le programme. Les deux fragments doivent s’afficher correctement.
  
 Ajoutez un 3ème fragment (classe `ReplacingFragment`) au programme qui va remplacer le fragment du bas.  
 
+Remplacer la méthode onAttach avec ce qui suit.
+
+~~~ java
+@Override
+void onAttach(Context context) {
+    super.onAttach(context)
+    listener = context
+}
+~~~
+
+*Ceci est possible car ReplacingFragment n'intéragit avec son activité parent. Cette dernière n'a donc pas besoin d'implémenter d'interface pour être compatible avec le fragment.*
+
 Ajoutez dans le fragment de haut un autre bouton par la programmation vous permettant de remplacer le fragment du bas par le `ReplacingFragment`. 
+
 Créer un bouton dans le fragment de haut vous permettant de remplacer le fragment du bas. Le code de remplacement du fragment ressemble à ceci : 
 
 ~~~ java
