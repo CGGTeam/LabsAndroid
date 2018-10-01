@@ -309,7 +309,7 @@ Cliquez pour revenir en arrière avec la touche Retour Arrière du périphériqu
 
 ## III. Fragment Master-Détail
 
-Dans cette deuxième partie du labo, vous allez créer une application qui va vous permettre de faire la communication entre un `RecyclerView` et un fragment. Dans ce casci, vous allez utiliser un template master-detail. Les `RecyclerViews` sont une version un peu plus évoluée et plus performante des `ListView`.  
+Dans cette troisième partie du labo, vous allez créer une application qui va vous permettre de faire la communication entre un `RecyclerView` et un fragment. Dans ce casci, vous allez utiliser un template master-detail. Les `RecyclerViews` sont une version un peu plus évoluée et plus performante des `ListView`.  
 Créez un projet en choisissant l’option master-detail
 
 ![Master Detail](master_detail.jpg)
