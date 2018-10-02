@@ -263,8 +263,8 @@ Remplacer la méthode onAttach avec ce qui suit.
 ~~~ java
 @Override
 void onAttach(Context context) {
-    super.onAttach(context)
-    listener = context
+    super.onAttach(context);
+    listener = context;
 }
 ~~~
 
