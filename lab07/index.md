@@ -326,7 +326,7 @@ Dans le fragment de gauche, affichez seulement les noms et prénoms des personne
 
 Ajoutez des boutons Save, Delete et Update vous permettant de faire les opérations de CRUD sur les données.  
 
-(TUTO DE LA MORT)[https://stackoverflow.com/questions/31367599/how-to-update-recyclerview-adapter-data]
+[TUTO DE LA MORT](https://stackoverflow.com/questions/31367599/how-to-update-recyclerview-adapter-data)
 
 Vous pouvez alimenter la source de donnée au démarrage de l’application comme dans le cas des `DummyItem`.  
 
