@@ -155,15 +155,6 @@ Et initialisez l’objet comme suit dans la méthode `onCreate`
 coloredFragment = (ColoredFragment) getFragmentManager().findFragmentById(R.id.coloredFragment);
 ~~~
 
-Dans `MainActivity`, Implémentez la méthode `onSendColorFragmentInteraction` comme suit : 
-
-~~~ java
-@Override 
-public void onSendColorFragmentInteraction(int color) {
-    coloredFragment.setLayoutBackgroundColor(color);
-} 
-~~~
-
 Conseil: `FragmentManager` est devenu obsolète à partir de l'API 28. Vous pouvez utiliser `SupportFragmentManager`.  
 
 Dans le fragment coloré (`ColoredFragment`), implémentez la méthode `setLayoutBackgroundColor` comme suit :
@@ -172,6 +163,15 @@ Dans le fragment coloré (`ColoredFragment`), implémentez la méthode `setLayou
 public void setLayoutBackgroundColor(int color) 
 { 
    coloredFragmentLayout.setBackgroundColor(color); 
+} 
+~~~
+
+Dans `MainActivity`, Implémentez la méthode `onSendColorFragmentInteraction` comme suit : 
+
+~~~ java
+@Override 
+public void onSendColorFragmentInteraction(int color) {
+    coloredFragment.setLayoutBackgroundColor(color);
 } 
 ~~~
 
