@@ -157,6 +157,8 @@ coloredFragment = (ColoredFragment) getFragmentManager().findFragmentById(R.id.c
 
 Conseil: `FragmentManager` est devenu obsolète à partir de l'API 28. Vous pouvez utiliser `SupportFragmentManager`.  
 
+Dans la classe `ColoredFragment`, créez le champ `coloredFragmentLayout` et initialisez-le dans la méthode `onCreateView` comme dans le cas du fragment colorant.  
+
 Dans le fragment coloré (`ColoredFragment`), implémentez la méthode `setLayoutBackgroundColor` comme suit :
 
 ~~~ java
@@ -174,8 +176,6 @@ public void onSendColorFragmentInteraction(int color) {
     coloredFragment.setLayoutBackgroundColor(color);
 } 
 ~~~
-
-Dans la classe `ColoredFragment`, créez le champ `coloredFragmentLayout` et initialisez-le dans la méthode `onCreateView` comme dans le cas du fragment colorant.  
  
 Ajoutez des Logs dans les méthodes de callback indiquées sur le graphique du cycle de vie pour afficher les noms des méthodes appelées avec les noms de classes correspondantes. 
 
@@ -185,7 +185,9 @@ Lancez l'application et observez les appels aux méthodes de callback.
 
 Inspirez-vous de cette approche de communication entre les fragments pour envoyer un message (dans le sens inverse) du fragment coloré au fragment colorant affichant dans ce dernier un message "Merci de m’avoir coloré". Placez un bouton "Remerciements" dans le fragment coloré pour envoyer un message au fragment colorant. Modifier le programme pour que ce bouton soit actif dans le fragment coloré après avoir été effectivement coloré par le fragment colorant. 
  
-Ajoutez une liste (`ListView`) avec des couleurs au fragment de haut. Modifiez le programme pour que quand l'utilisateur sélectionne une couleur que le fragment de bas prenne cette couleur. 
+Ajoutez une liste (`ListView`) avec des couleurs au fragment de haut. Modifiez le programme pour que quand l'utilisateur sélectionne une couleur que le fragment de bas prenne cette couleur.
+
+**Cependant**, étant donné que `ListView` est obsolète, il est conseillé d'utiliser un [RecyclerView](https://www.androidhive.info/2016/01/android-working-with-recycler-view/) à la place.
 
 ## II. Fragment dynamique
 
