@@ -189,8 +189,8 @@ gauche.
 ```Java
 "http://openweathermap.org/img/w/" + iconName + ".png" 
 ```
-`iconName` 
-représente le nom de l'icône provenant du fichier JSON. 
+
+`iconName` représente le nom de l'icône provenant du fichier JSON. 
 
 ![UI affichage météo](./SaisieVille.png "Affichage météo")
 
