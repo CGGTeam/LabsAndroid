@@ -83,7 +83,10 @@ Une barre de progression horizontale doit être cachée par défaut en lancant v
 (visibility=gone).
 
 Créez une classe GGDownloadTask héritant de la classe AsyncTask<String, Integer,
-String>. 
+String>.
+
+Implémentez la méthode onPreExecute afin de cacher le bouton et d'afficher la barre de
+progression.
 
 ```Java
 @Override
