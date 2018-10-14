@@ -192,9 +192,9 @@ gauche.
 `iconName` 
 représente le nom de l'icône provenant du fichier JSON. 
 
-![UI affichage météo](./SaisieVille.png "Affichage météo")
+![UI affichage météo](./SaisieVille.PNG "Affichage météo")
 
-![UI saisie ville](./AffichageMeteo.png "Saisie de la ville")
+![UI saisie ville](./AffichageMeteo.PNG "Saisie de la ville")
 
 A remettre dans un fichier zippé au plus tard le lundi 15 octobre à 17h.
 
