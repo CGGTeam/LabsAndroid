@@ -28,7 +28,6 @@ vous avez des paires clé/valeur dans les fichiers JSON.
 Dans un deuxième temps, vous allez chercher un fichier JSON à partir d'un service Web
 sur Internet pour afficher les données.
 
-
 Lors du passage d'une application au premier plan, l'exécution des différents traitements
 et taches s'effectue dans l'UI Thread (User Interface Thread). Ce thread est le cœur de 
 votre application et il s'occupe de toute la gestion des interfaces et des interactions
@@ -68,6 +67,47 @@ d'exécuter un traitement lourd en tâche de fond.
 d'exécution. Elle est appelée à l'aide de la function publishProgress.
 - **onPostExecute**: permet de mettre à jour l'interface avec le résultat obtenu à la fin
 du traitement exécuté dans la méthode doInBackground. 
+
+## Volley
+
+Volley est une librairie HTTP conçue pour Android qui gère, entre autres, le caching et les connexions concurrentielles.
+
+Pour inclure Volley à votre projet, ajouter `implementation 'com.android.volley:volley:1.0.0'` dans la section `dependencies` de votre `build.gradle`
+
+### Faire des requêtes (synchrone)
+
+Trois objets permettent, ensemble, de faire des requêtes HTTP avec Volley. La méthode démontrée sert à faire des requêtes synchrones, utile dans notre cas puisque les AsyncTask se font déjà sur un autre thread.
+
+Ces objets sont:
+
+- **JsonObjectRequest**: Permet de bâtir des requêtes, puis de gérer les évènements de succès et d'erreur de façon asynchrone. Par contre, nous allons utiliser `RequestFuture` pour rendre le traitement synchrone.
+- **RequestFuture\<T\>**: Sert de Listener pour le succès de requetes et les évènements d'erreur pour les gérer de façon synchrone.
+- **RequestQueue**: S'occupe d'exécuter la requête et de gérer la concurrence. Dans notre cas nous l'utiliseront avec `Volley.newRequestQueue()`
+
+### Un exemple
+
+```Java
+String url = "http://www.api.com/donnees";
+
+RequestQueue requestQueue = Volley.newRequestQueue(context) //Créé un nouveau RequestQueue en y passant un context comme, par exemple, une Activité.
+requestQueue.start();
+
+RequestFuture<JSONObject> future = new RequestFuture.newFuture();
+JsonObjectRequest requete = new JsonObjectRequest(RequestMethod.GET, url, null, future, future) //Ici, future gère le succès et l'échec de la requête.
+
+requestQueue.add(requete); //Pour que le queue s'occupe d'exécuter notre requête
+
+//Maintenant nous pouvons récupérer la réponse et gérer les erreurs s'il y a lieu.
+try {
+    JSONObject reponse = future.get(); //ceci bloque l'exécution jusqu'à ce que la requête ce fasse.
+
+    ... //Ici nous pouvons lire l'objet JSON. Pour voir comment
+} catch (Exception e) {
+    e.printStackTrace
+}
+
+requestQueue.stop();
+```
 
 ## Application
 
