@@ -139,7 +139,7 @@ comme suit:
 
 ```Java
 @Override
-protected void onProgressUpdate(Integer... params) {
+protected void onProgressUpdate(Integer... progress) {
     super.onProgressUpdate(progress);
     MainActivity.this.progress.setProgress(progress[0]);
 }
