@@ -101,7 +101,7 @@ requestQueue.add(requete); //Pour que le queue s'occupe d'exécuter notre requê
 try {
     JSONObject reponse = future.get(); //ceci bloque l'exécution jusqu'à ce que la requête ce fasse.
 
-    ... //Ici nous pouvons lire l'objet JSON. Pour voir comment
+    ... //Ici nous pouvons lire l'objet JSON. Pour voir comment faire, lire l'exemple de Roro
 } catch (Exception e) {
     e.printStackTrace
 }
