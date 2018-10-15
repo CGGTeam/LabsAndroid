@@ -82,7 +82,7 @@ Ajoutez un bouton (launch_async) et une barre de progression à votre interface.
 Une barre de progression horizontale doit être cachée par défaut en lancant votre activité
 (visibility=gone).
 
-Créez une classe GGDownloadTask héritant de la classe AsyncTask<String, Integer,
+Créez une classe interne dans MainActivity qui s'appelle `GGDownloadTask` héritant de la classe AsyncTask<String, Integer,
 String>.
 
 Implémentez la méthode onPreExecute afin de cacher le bouton et d'afficher la barre de
