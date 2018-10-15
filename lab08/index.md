@@ -92,8 +92,8 @@ String url = "http://www.api.com/donnees";
 RequestQueue requestQueue = Volley.newRequestQueue(context) //Créé un nouveau RequestQueue en y passant un context comme, par exemple, une Activité.
 requestQueue.start();
 
-RequestFuture<JSONObject> future = new RequestFuture.newFuture();
-JsonObjectRequest requete = new JsonObjectRequest(RequestMethod.GET, url, null, future, future) //Ici, future gère le succès et l'échec de la requête.
+RequestFuture<JSONObject> future = RequestFuture.newFuture();
+JsonObjectRequest requete = new JsonObjectRequest(RequestMethod.GET, url, null, future, future) //Future gère le succès et l'échec de la requête.
 
 requestQueue.add(requete); //Pour que le queue s'occupe d'exécuter notre requête
 
@@ -101,7 +101,7 @@ requestQueue.add(requete); //Pour que le queue s'occupe d'exécuter notre requê
 try {
     JSONObject reponse = future.get(); //ceci bloque l'exécution jusqu'à ce que la requête ce fasse.
 
-    ... //Ici nous pouvons lire l'objet JSON. Pour voir comment faire, lire l'exemple de Roro
+    ... //Nous avons maintenant accès à la réponse JSON du serveur. Pour lire l'objet JSON, voir l'exemple de Roro
 } catch (Exception e) {
     e.printStackTrace
 }
