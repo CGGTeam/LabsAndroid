@@ -3,7 +3,7 @@ Laboratoire 5<br/>
 Services, notifications et récetpeurs d'événements
 </div>
 
-# Objectifs d'apprentissage
+# Objectifs d'apprentissage (test pour Victor)
 
 * Comprendre le cycle de vie d’un service
 * Créer un service
